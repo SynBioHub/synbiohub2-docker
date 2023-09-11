@@ -27,7 +27,7 @@ services:
         restart: always
         environment: 
             - backend=http://localhost:7777
-            - backendSS=http://synbiohubbackend:7777
+            - backendSS=http://synbiohub:7777
     synbiohub:
         image: synbiohub/synbiohub:snapshot-standalone
         depends_on: 
