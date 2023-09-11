@@ -29,7 +29,7 @@ services:
             - backend=http://localhost:6789
             - backendSS=http://synbiohubbackend:6789
     synbiohub:
-        image: synbiohub/synbiohub:snapshot-standalone
+        image: synbiohub/synbiohub:1.6.1-standalone
         depends_on: 
             - virtuoso
         ports:
