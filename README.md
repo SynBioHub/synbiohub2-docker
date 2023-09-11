@@ -8,7 +8,7 @@ The base configuration, described with `docker-compose.yml`, is simply SynBioHub
 To run the base configuration:
 1. Open terminal
 2. `git clone https://github.com/synbiohub/synbiohub2-docker`
-3. `docker-compose --f ./synbiohub2-docker/docker-compose.yml up`
+3. `docker-compose -f ./synbiohub2-docker/docker-compose.yml up`
 
 ### With Explorer
-To add [SBOLExplorer](https://github.com/michael13162/SBOLExplorer), add the `docker-compose.explorer.yml` to the main docker-compose, i.e. for step 3 run `docker-compose --f ./synbiohub2-docker/docker-compose.yml -f ./synbiohub2-docker/docker-compose.explorer.yml up`
+To add [SBOLExplorer](https://github.com/michael13162/SBOLExplorer), add the `docker-compose.explorer.yml` to the main docker-compose, i.e. for step 3 run `docker-compose -f ./synbiohub2-docker/docker-compose.yml -f ./synbiohub2-docker/docker-compose.explorer.yml up`
