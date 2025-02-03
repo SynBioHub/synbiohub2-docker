@@ -7,7 +7,7 @@ The base configuration, described with `docker-compose.yml`, is simply SynBioHub
 
 To run the base configuration:
 1. Open terminal
-2. `git clone https://github.com/synbiohub/synbiohub2-docker`
+2. `git clone -b snapshot https://github.com/synbiohub/synbiohub2-docker`
 3. `docker-compose -f ./synbiohub2-docker/docker-compose.yml up`
 
 ### With Explorer
