@@ -21,7 +21,10 @@ services:
             timeout: 10s
             retries: 4
     synbiohub:
-        image: synbiohub/synbiohub:snapshot-standalone
+        # image: synbiohub/synbiohub:snapshot-standalone
+        build:
+            context: ../synbiohub/
+            dockerfile: ../synbiohub/docker/Dockerfile
         depends_on:
             virtuoso:
                 condition: service_healthy
@@ -35,6 +38,37 @@ services:
               source: virtuoso-db1
               target: /virtuoso
         restart: always
+        healthcheck:
+            test: ["CMD-SHELL", "curl -f http://localhost:7777/"]
+            start_period: 30s
+            interval: 10s
+            timeout: 10s
+            retries: 5
+    synbiohub-frontend:
+        build:
+            context: . #./synbiohub3/frontend
+            dockerfile: Dockerfile.frontend
+        depends_on:
+            synbiohub:
+                condition: service_healthy
+        ports:
+            - "3333:3333"
+        restart: always
+        environment:
+            - backend=http://localhost:7777
+            - backendSS=http://synbiohub:7777
+        volumes:
+        - type: bind
+          source: ../synbiohub3/frontend
+          target: /app
+    # pluginVisualSeqviz:
+    #     image: synbiohub/plugin-visual-seqviz:snapshot
+    #     ports:
+    #         - "8085:5000"
+    pluginVisualTest:
+        image: synbiohub/plugin-visual-test:snapshot
+        ports:
+            - "8081:5000"
 volumes:
     virtuoso-db1:
     sbh1:

@@ -1,0 +1,14 @@
+FROM node:14-alpine
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+
+RUN yarn install --frozen-lockfile
+ENV NODE_ENV=development
+
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+
+USER nextjs
+
+CMD ["yarn", "dev"]
+# CMD ["yarn", "start"]
