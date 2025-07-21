@@ -1,0 +1,189 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: synbiohub
+  name: synbiohub
+spec:
+  ports:
+  - name: "7777"
+    port: 7777
+    targetPort: 7777
+  selector:
+    app: synbiohub
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: synbiohubfrontend
+  name: synbiohubfrontend
+spec:
+  ports:
+  - name: "3333"
+    port: 3333
+    targetPort: 3333
+  selector:
+    app: synbiohubfrontend
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: virtuoso
+  name: virtuoso
+spec:
+  ports:
+  - name: "8890"
+    port: 8890
+    targetPort: 8890
+  selector:
+    app: virtuoso
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: sbh1
+  name: sbh1
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Mi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: virtuoso-db1
+  name: virtuoso-db1
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: synbiohub-deployment
+  name: synbiohub-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: synbiohub
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: synbiohub
+    spec:
+      containers:
+      - image: synbiohub/synbiohub:first-run-script
+        name: synbiohub
+        ports:
+        - containerPort: 7777
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /mnt
+          name: sbh1
+        - mountPath: /virtuoso
+          name: virtuoso-db1
+      restartPolicy: Always
+      volumes:
+      - name: sbh1
+        persistentVolumeClaim:
+          claimName: sbh1
+      - name: virtuoso-db1
+        persistentVolumeClaim:
+          claimName: virtuoso-db1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: synbiohubfrontend-deployment
+  name: synbiohubfrontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: synbiohubfrontend
+  template:
+    metadata:
+      labels:
+        app: synbiohubfrontend
+    spec:
+      containers:
+      - env:
+        - name: backend
+          value: http://localhost:7777
+        - name: backendSS
+          value: http://synbiohub:7777
+        image: synbiohub/sbh3frontend:snapshot
+        name: synbiohubfrontend
+        ports:
+        - containerPort: 3333
+          protocol: TCP
+      restartPolicy: Always
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: virtuoso-deployment
+  name: virtuoso-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: virtuoso
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: virtuoso
+    spec:
+      containers:
+      - env:
+        - name: VIRT_HTTPServer_ServerThreads
+          value: "300"
+        - name: VIRT_Parameters_ServerThreads
+          value: "30"
+        - name: VIRT_SPARQL_MaxQueryCostEstimationTime
+          value: default
+        - name: VIRT_SPARQL_MaxQueryExecutionTime
+          value: "300"
+        image: tenforce/virtuoso:virtuoso7.2.5
+        name: virtuoso
+        ports:
+        - containerPort: 8890
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /data
+          name: virtuoso-db1
+      restartPolicy: Always
+      volumes:
+      - name: virtuoso-db1
+        persistentVolumeClaim:
+          claimName: virtuoso-db1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sbh-loadbalancer
+spec:
+  selector:
+    app: synbiohub
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 7777
