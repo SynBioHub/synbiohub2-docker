@@ -1,0 +1,6 @@
+[submodule "synbiohub"]
+	path = synbiohub
+	url = git@github.com:SynBioHub/synbiohub.git
+[submodule "synbiohub3"]
+	path = synbiohub3
+	url = git@github.com:SynBioHub/synbiohub3.git
