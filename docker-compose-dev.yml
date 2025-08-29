@@ -23,8 +23,8 @@ services:
     synbiohub:
         # image: synbiohub/synbiohub:snapshot-standalone
         build:
-            context: ../synbiohub/
-            dockerfile: ../synbiohub/docker/Dockerfile
+            context: ./synbiohub/
+            dockerfile: ./synbiohub/docker/Dockerfile
         depends_on:
             virtuoso:
                 condition: service_healthy
@@ -59,7 +59,7 @@ services:
             - backendSS=http://synbiohub:7777
         volumes:
         - type: bind
-          source: ../synbiohub3/frontend
+          source: ./synbiohub3/frontend
           target: /app
     # pluginVisualSeqviz:
     #     image: synbiohub/plugin-visual-seqviz:snapshot
