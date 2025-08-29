@@ -65,10 +65,10 @@ services:
     #     image: synbiohub/plugin-visual-seqviz:snapshot
     #     ports:
     #         - "8085:5000"
-    pluginVisualTest:
-        image: synbiohub/plugin-visual-test:snapshot
-        ports:
-            - "8081:5000"
+    # pluginVisualTest:
+    #     image: synbiohub/plugin-visual-test:snapshot
+    #     ports:
+    #         - "8081:5000"
 volumes:
     virtuoso-db1:
     sbh1:
