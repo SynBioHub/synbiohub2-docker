@@ -1,0 +1,28 @@
+FROM node:11.1.0-alpine
+
+RUN apk add nss git openjdk8-jre openjdk8 maven python alpine-sdk libxml2-dev yarn g++ gcc bash raptor2 jq
+
+WORKDIR /synbiohub
+# Mount the synbiohub dir
+# COPY . . 
+
+# RUN rm -rf .git
+
+# Must run this part manually on start
+RUN git config --global url."https://".insteadOf git://
+# RUN cd java && mvn package
+# RUN yarn install
+
+# Mount the synbiohub/docker files
+# COPY docker/config.local.json config.initial.local.json
+# COPY docker/healthcheck.js healthcheck.js
+# COPY docker/entry.sh entry.sh  #### not this one
+# COPY docker/first_run.sh first_run.sh
+
+EXPOSE 7777
+
+HEALTHCHECK --start-period=60s CMD ["node", "healthcheck.js"] 
+# npm run-script dev
+#     "dev": "nodemon synbiohub.js 2>&1 | tee -a synbiohub.log"
+ENTRYPOINT ["npx", "nodemon", "synbiohub.js"]
+

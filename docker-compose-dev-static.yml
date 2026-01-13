@@ -2,7 +2,7 @@ services:
     virtuoso:
         build:
             context: .
-            dockerfile: Dockerfile.virtuoso
+            dockerfile: ./Dockerfile.virtuoso
         environment:
             - VIRT_SPARQL_MaxQueryCostEstimationTime=default
             - VIRT_SPARQL_MaxQueryExecutionTime=300
@@ -21,10 +21,9 @@ services:
             timeout: 10s
             retries: 4
     synbiohub:
-        # image: synbiohub/synbiohub:snapshot-standalone
         build:
-            context: ./synbiohub/
-            dockerfile: ./synbiohub/docker/Dockerfile
+            context: ../synbiohub/
+            dockerfile: ./docker/Dockerfile
         depends_on:
             virtuoso:
                 condition: service_healthy
@@ -46,29 +45,19 @@ services:
             retries: 5
     synbiohub-frontend:
         build:
-            context: . #./synbiohub3/frontend
-            dockerfile: Dockerfile.frontend
+            context: ../synbiohub3/frontend
+            dockerfile: ./Dockerfile
         depends_on:
             synbiohub:
                 condition: service_healthy
         ports:
             - "3333:3333"
+        labels:
+            - "com.docker.desktop.open.url=http://localhost:3333"
         restart: always
         environment:
             - backend=http://localhost:7777
             - backendSS=http://synbiohub:7777
-        volumes:
-        - type: bind
-          source: ./synbiohub3/frontend
-          target: /app
-    # pluginVisualSeqviz:
-    #     image: synbiohub/plugin-visual-seqviz:snapshot
-    #     ports:
-    #         - "8085:5000"
-    # pluginVisualTest:
-    #     image: synbiohub/plugin-visual-test:snapshot
-    #     ports:
-    #         - "8081:5000"
 volumes:
     virtuoso-db1:
     sbh1:

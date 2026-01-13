@@ -40,6 +40,8 @@ services:
         image: synbiohub/sbh3frontend:snapshot
         ports:
             - "3333:3333"
+        labels:
+            - "com.docker.desktop.open.url=http://localhost:3333"
         restart: always
 volumes:
     virtuoso-db1:

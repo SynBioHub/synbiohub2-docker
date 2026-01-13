@@ -2,7 +2,9 @@ FROM node:14-alpine
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-RUN yarn install --frozen-lockfile
+# does not work because we lack the lockfile
+# RUN yarn install --frozen-lockfile
+
 ENV NODE_ENV=development
 
 RUN addgroup -g 1001 -S nodejs
@@ -10,5 +12,6 @@ RUN adduser -S nextjs -u 1001
 
 USER nextjs
 
+# Probably just want to have user run yarn install manually but whatever
+# CMD ["sh", "-c", "yarn install --frozen-lockfile && yarn dev"]
 CMD ["yarn", "dev"]
-# CMD ["yarn", "start"]
