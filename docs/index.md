@@ -1,8 +1,7 @@
 ## Plugins
-This is a sortable table with plugin information. Click on the header to sort by that column.
+This is a table with plugin information.
 <html>
 	<head>
-		<title>Plugin Table</title>
 		<link rel="stylesheet" type="text/css" href="https://www.jqueryscript.net/demo/DataTables-Jquery-Table-Plugin/media/css/jquery.dataTables.css">
 	</head>
 	<body>
@@ -33,7 +32,7 @@ This is a sortable table with plugin information. Click on the header to sort by
 			</thead>
 			<tbody>
 				<tr>
-					<td>Plugin Visual Test</td>
+					<td>Plugin Visual Test (not yet finished)</td>
 					<td>Visual</td>
 					<td>8081</td>
 					<td>Python</td>
@@ -45,29 +44,5 @@ This is a sortable table with plugin information. Click on the header to sort by
 				</tr>
 			</tbody>
 		</table>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-		<script>
-			$(document).ready(function() {
-				var table = $('#example').DataTable({
-					paging:false,
-					orderCellsTop:false,
-					fixedHeader: true,
-					scrollX: false
-				});
-				$('#example thead tr:eq(0) th').each( function (i) {
-					var select = $('<select><option value=""></option></select>')
-						.appendTo( $(this).empty() )
-						.on( 'change', function () {
-							table.column( i )
-								.search( $(this).val() )
-								.draw();
-						} );
-					table.column( i ).data().unique().sort().each( function ( d, j ) {
-						select.append( '<option value="'+d+'">'+d+'</option>' )
-					} );
-				} );
-			} );
-		</script>
 	</body>
 </html>
