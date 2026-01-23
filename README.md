@@ -12,3 +12,6 @@ To run the base configuration:
 
 ### With Explorer
 To add [SBOLExplorer](https://github.com/michael13162/SBOLExplorer), add the `docker-compose.explorer.yml` to the main docker-compose, i.e. for step 3 run `docker-compose -f ./synbiohub2-docker/docker-compose.yml -f ./synbiohub2-docker/docker-compose.explorer.yml up`
+
+### Plugins
+For full plugin information please see this <a href="https://github.com/SynBioHub/synbiohub2-docker/blob/master/docs/index.md" target="_blank">table</a> which contains a table of plugins.
