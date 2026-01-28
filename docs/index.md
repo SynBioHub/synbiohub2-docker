@@ -32,15 +32,37 @@ This is a table with plugin information.
 			</thead>
 			<tbody>
 				<tr>
-					<td>Plugin Visual Test (not yet finished)</td>
+					<td>Visual Test</td>
 					<td>Visual</td>
 					<td>8081</td>
 					<td>Python</td>
 					<td>Yes</td>
-					<td>Simply indicates that visualisation plugins are working and provides a framework to play with for plugin developers</td>
+					<td>Indicates that visualisation plugins are working and provides a framework to play with for plugin developers</td>
 					<td>No</td>
 					<td><a href="https://github.com/SynBioHub/Plugin-Visual-Test">Plugin-Visual-Test</a></td>
 					<td>docker-compose.pluginVisualTest.yml</td>
+				</tr>
+				<tr>
+					<td>Submit Test</td>
+					<td>Submit</td>
+					<td>8087</td>
+					<td>Python</td>
+					<td>Yes</td>
+					<td>Indicates that submit plugins are working and provides a framework to play with for plugin developers</td>
+					<td>No</td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Submit-Test">Plugin-Visual-Test</a></td>
+					<td>docker-compose.pluginSubmitTest.yml</td>
+				</tr>
+				<tr>
+					<td>Download Test</td>
+					<td>Download</td>
+					<td>8089</td>
+					<td>Python</td>
+					<td>Yes</td>
+					<td>Indicates that download plugins are working and provides a framework to play with for plugin developers</td>
+					<td>No</td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Submit-Test">Plugin-Visual-Test</a></td>
+					<td>docker-compose.pluginSubmitTest.yml</td>
 				</tr>
 			</tbody>
 		</table>
