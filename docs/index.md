@@ -43,6 +43,17 @@ This is a table with plugin information.
 					<td>docker-compose.pluginVisualTest.yml</td>
 				</tr>
 				<tr>
+					<td>Visual Serve Test</td>
+					<td>Visual</td>
+					<td>8088</td>
+					<td>Python</td>
+					<td>Yes</td>
+					<td>A template for visual plugins that provide external image/script files and provides a framework to play with for plugin developers</td>
+					<td>No</td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Visual-Serve-Test">Plugin-Visual-Serve-Test</a></td>
+					<td>docker-compose.pluginVisualServeTest.yml</td>
+				</tr>
+				<tr>
 					<td>Submit Test</td>
 					<td>Submit</td>
 					<td>8087</td>
@@ -74,6 +85,17 @@ This is a table with plugin information.
 					<td>No</td>
 					<td><a href="https://github.com/SynBioHub/Plugin-Visual-Test-js">Plugin-Visual-Test-js</a></td>
 					<td>docker-compose.pluginVisualTestJs.yml</td>
+				</tr>
+				<tr>
+					<td>Visual Serve Test JS</td>
+					<td>Visual</td>
+					<td>8086</td>
+					<td>JavaScript</td>
+					<td>Yes</td>
+					<td>A template for visual plugins that provide external image/script files and provides a framework to play with for plugin developers</td>
+					<td>No</td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Visual-Serve-Test-js">Plugin-Visual-Serve-Test-js</a></td>
+					<td>docker-compose.pluginVisualServeTestJs.yml</td>
 				</tr>
 				<tr>
 					<td>Submit Test JS</td>
