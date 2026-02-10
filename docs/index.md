@@ -50,7 +50,7 @@ This is a table with plugin information.
 					<td>Yes</td>
 					<td>Indicates that submit plugins are working and provides a framework to play with for plugin developers</td>
 					<td>No</td>
-					<td><a href="https://github.com/SynBioHub/Plugin-Submit-Test">Plugin-Visual-Test</a></td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Submit-Test">Plugin-Submit-Test</a></td>
 					<td>docker-compose.pluginSubmitTest.yml</td>
 				</tr>
 				<tr>
@@ -61,8 +61,41 @@ This is a table with plugin information.
 					<td>Yes</td>
 					<td>Indicates that download plugins are working and provides a framework to play with for plugin developers</td>
 					<td>No</td>
-					<td><a href="https://github.com/SynBioHub/Plugin-Submit-Test">Plugin-Visual-Test</a></td>
-					<td>docker-compose.pluginSubmitTest.yml</td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Download-Test">Plugin-Download-Test</a></td>
+					<td>docker-compose.pluginDownloadTest.yml</td>
+				</tr>
+				<tr>
+					<td>Visual Test JS</td>
+					<td>Visual</td>
+					<td>8082</td>
+					<td>JavaScript</td>
+					<td>Yes</td>
+					<td>Indicates that visualisation plugins are working and provides a framework to play with for plugin developers</td>
+					<td>No</td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Visual-Test-js">Plugin-Visual-Test-js</a></td>
+					<td>docker-compose.pluginVisualTestJs.yml</td>
+				</tr>
+				<tr>
+					<td>Submit Test JS</td>
+					<td>Submit</td>
+					<td>8091</td>
+					<td>JavaScript</td>
+					<td>Yes</td>
+					<td>Indicates that submit plugins are working and provides a framework to play with for plugin developers</td>
+					<td>No</td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Submit-Test-js">Plugin-Submit-Test-js</a></td>
+					<td>docker-compose.pluginSubmitTestJs.yml</td>
+				</tr>
+				<tr>
+					<td>Download Test JS</td>
+					<td>Download</td>
+					<td>8090</td>
+					<td>JavaScript</td>
+					<td>Yes</td>
+					<td>Indicates that download plugins are working and provides a framework to play with for plugin developers</td>
+					<td>No</td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Download-Test-js">Plugin-Download-Test-js</a></td>
+					<td>docker-compose.pluginDownloadTestJs.yml</td>
 				</tr>
 			</tbody>
 		</table>
