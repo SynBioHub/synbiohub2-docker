@@ -28,7 +28,6 @@ services:
         image: synbiohub/sbh3frontend:snapshot
         ports:
             - "3333:3333"
-        dns: 8.8.8.8
         restart: always
         environment: 
             - backend=${SYNBIOHUB_BACKEND:-http://localhost:7777}
@@ -46,7 +45,6 @@ services:
             - type: volume
               source: virtuoso-db1
               target: /virtuoso
-        dns: 8.8.8.8
         restart: always
 
 volumes:

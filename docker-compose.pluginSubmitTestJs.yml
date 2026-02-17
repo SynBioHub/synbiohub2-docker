@@ -5,5 +5,4 @@ services:
         image: synbiohub/plugin-submit-test-js:snapshot
         ports:
             - "8091:5000"
-        dns: 8.8.8.8
         restart: always
