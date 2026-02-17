@@ -19,6 +19,13 @@ To use a custom backend URL:
 SYNBIOHUB_BACKEND=http://your-backend-url:port docker-compose -f ./synbiohub2-docker/docker-compose.yml up
 ```
 
+Alternatively, you can create a `.env` file in the same directory as `docker-compose.yml`:
+```bash
+cp .env.example .env
+# Edit .env and uncomment/set SYNBIOHUB_BACKEND
+docker-compose -f ./synbiohub2-docker/docker-compose.yml up
+```
+
 ### With Explorer
 To add [SBOLExplorer](https://github.com/michael13162/SBOLExplorer), add the `docker-compose.explorer.yml` to the main docker-compose, i.e. for step 3 run `docker-compose -f ./synbiohub2-docker/docker-compose.yml -f ./synbiohub2-docker/docker-compose.explorer.yml up`
 
