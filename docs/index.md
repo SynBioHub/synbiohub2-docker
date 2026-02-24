@@ -1,125 +1,14 @@
 ## Plugins
+
 This is a table with plugin information.
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="https://www.jqueryscript.net/demo/DataTables-Jquery-Table-Plugin/media/css/jquery.dataTables.css">
-	</head>
-	<body>
-		<table id="example" class="display" cellspacing="0" width="100%">
-			<thead>
-				<tr>
-					<th style="visibility: hidden;">Name</th>
-					<th>Type</th>
-					<th style="visibility: hidden;">Port</th>
-					<th>Language</th>
-					<th>Test</th>
-					<th style="visibility: hidden;">Description</th>
-					<th>Multi-Endpoint</th>
-					<th style="visibility: hidden;">Repository</th>
-					<th style="visibility: hidden;">File</th>
-				</tr>
-				<tr>
-					<th>Name</th>
-					<th>Type</th>
-					<th>Port</th>
-					<th>Language</th>
-					<th>Test</th>
-					<th>Description</th>
-					<th>Multi-Endpoint</th>
-					<th>Repository</th>
-					<th>File</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Visual Test</td>
-					<td>Visual</td>
-					<td>8081</td>
-					<td>Python</td>
-					<td>Yes</td>
-					<td>Indicates that visualisation plugins are working and provides a framework to play with for plugin developers</td>
-					<td>No</td>
-					<td><a href="https://github.com/SynBioHub/Plugin-Visual-Test">Plugin-Visual-Test</a></td>
-					<td>docker-compose.pluginVisualTest.yml</td>
-				</tr>
-				<tr>
-					<td>Visual Serve Test</td>
-					<td>Visual</td>
-					<td>8088</td>
-					<td>Python</td>
-					<td>Yes</td>
-					<td>A template for visual plugins that provide external image/script files and provides a framework to play with for plugin developers</td>
-					<td>No</td>
-					<td><a href="https://github.com/SynBioHub/Plugin-Visual-Serve-Test">Plugin-Visual-Serve-Test</a></td>
-					<td>docker-compose.pluginVisualServeTest.yml</td>
-				</tr>
-				<tr>
-					<td>Submit Test</td>
-					<td>Submit</td>
-					<td>8087</td>
-					<td>Python</td>
-					<td>Yes</td>
-					<td>Indicates that submit plugins are working and provides a framework to play with for plugin developers</td>
-					<td>No</td>
-					<td><a href="https://github.com/SynBioHub/Plugin-Submit-Test">Plugin-Submit-Test</a></td>
-					<td>docker-compose.pluginSubmitTest.yml</td>
-				</tr>
-				<tr>
-					<td>Download Test</td>
-					<td>Download</td>
-					<td>8089</td>
-					<td>Python</td>
-					<td>Yes</td>
-					<td>Indicates that download plugins are working and provides a framework to play with for plugin developers</td>
-					<td>No</td>
-					<td><a href="https://github.com/SynBioHub/Plugin-Download-Test">Plugin-Download-Test</a></td>
-					<td>docker-compose.pluginDownloadTest.yml</td>
-				</tr>
-				<tr>
-					<td>Visual Test JS</td>
-					<td>Visual</td>
-					<td>8082</td>
-					<td>JavaScript</td>
-					<td>Yes</td>
-					<td>Indicates that visualisation plugins are working and provides a framework to play with for plugin developers</td>
-					<td>No</td>
-					<td><a href="https://github.com/SynBioHub/Plugin-Visual-Test-js">Plugin-Visual-Test-js</a></td>
-					<td>docker-compose.pluginVisualTestJs.yml</td>
-				</tr>
-				<tr>
-					<td>Visual Serve Test JS</td>
-					<td>Visual</td>
-					<td>8086</td>
-					<td>JavaScript</td>
-					<td>Yes</td>
-					<td>A template for visual plugins that provide external image/script files and provides a framework to play with for plugin developers</td>
-					<td>No</td>
-					<td><a href="https://github.com/SynBioHub/Plugin-Visual-Serve-Test-js">Plugin-Visual-Serve-Test-js</a></td>
-					<td>docker-compose.pluginVisualServeTestJs.yml</td>
-				</tr>
-				<tr>
-					<td>Submit Test JS</td>
-					<td>Submit</td>
-					<td>8091</td>
-					<td>JavaScript</td>
-					<td>Yes</td>
-					<td>Indicates that submit plugins are working and provides a framework to play with for plugin developers</td>
-					<td>No</td>
-					<td><a href="https://github.com/SynBioHub/Plugin-Submit-Test-js">Plugin-Submit-Test-js</a></td>
-					<td>docker-compose.pluginSubmitTestJs.yml</td>
-				</tr>
-				<tr>
-					<td>Download Test JS</td>
-					<td>Download</td>
-					<td>8090</td>
-					<td>JavaScript</td>
-					<td>Yes</td>
-					<td>Indicates that download plugins are working and provides a framework to play with for plugin developers</td>
-					<td>No</td>
-					<td><a href="https://github.com/SynBioHub/Plugin-Download-Test-js">Plugin-Download-Test-js</a></td>
-					<td>docker-compose.pluginDownloadTestJs.yml</td>
-				</tr>
-			</tbody>
-		</table>
-	</body>
-</html>
+
+| Name | Type | Port | Language | Test | Description | Multi-Endpoint | Repository | File |
+|---|---|---:|---|---|---|---|---|---|
+| Visual Test | Visual | 8081 | Python | Yes | Indicates that visualisation plugins are working and provides a framework to play with for plugin developers | No | [Plugin-Visual-Test](https://github.com/SynBioHub/Plugin-Visual-Test) | docker-compose.pluginVisualTest.yml |
+| Visual Serve Test | Visual | 8088 | Python | Yes | A template for visual plugins that provide external image/script files and provides a framework to play with for plugin developers | No | [Plugin-Visual-Serve-Test](https://github.com/SynBioHub/Plugin-Visual-Serve-Test) | docker-compose.pluginVisualServeTest.yml |
+| Submit Test | Submit | 8087 | Python | Yes | Indicates that submit plugins are working and provides a framework to play with for plugin developers | No | [Plugin-Submit-Test](https://github.com/SynBioHub/Plugin-Submit-Test) | docker-compose.pluginSubmitTest.yml |
+| Download Test | Download | 8089 | Python | Yes | Indicates that download plugins are working and provides a framework to play with for plugin developers | No | [Plugin-Download-Test](https://github.com/SynBioHub/Plugin-Download-Test) | docker-compose.pluginDownloadTest.yml |
+| Visual Test JS | Visual | 8082 | JavaScript | Yes | Indicates that visualisation plugins are working and provides a framework to play with for plugin developers | No | [Plugin-Visual-Test-js](https://github.com/SynBioHub/Plugin-Visual-Test-js) | docker-compose.pluginVisualTestJs.yml |
+| Visual Serve Test JS | Visual | 8086 | JavaScript | Yes | A template for visual plugins that provide external image/script files and provides a framework to play with for plugin developers | No | [Plugin-Visual-Serve-Test-js](https://github.com/SynBioHub/Plugin-Visual-Serve-Test-js) | docker-compose.pluginVisualServeTestJs.yml |
+| Submit Test JS | Submit | 8091 | JavaScript | Yes | Indicates that submit plugins are working and provides a framework to play with for plugin developers | No | [Plugin-Submit-Test-js](https://github.com/SynBioHub/Plugin-Submit-Test-js) | docker-compose.pluginSubmitTestJs.yml |
+| Download Test JS | Download | 8090 | JavaScript | Yes | Indicates that download plugins are working and provides a framework to play with for plugin developers | No | [Plugin-Download-Test-js](https://github.com/SynBioHub/Plugin-Download-Test-js) | docker-compose.pluginDownloadTestJs.yml |
