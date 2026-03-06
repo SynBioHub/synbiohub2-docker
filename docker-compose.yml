@@ -9,7 +9,7 @@ services:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
     virtuoso:
-        image: tenforce/virtuoso:virtuoso7.2.5
+        image: askomics/virtuoso:7.2.14
         environment:
             - VIRT_SPARQL_MaxQueryCostEstimationTime=default
             - VIRT_SPARQL_MaxQueryExecutionTime=300
