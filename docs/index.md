@@ -119,6 +119,39 @@ This is a table with plugin information.
 					<td><a href="https://github.com/SynBioHub/Plugin-Download-Test-js">Plugin-Download-Test-js</a></td>
 					<td>docker-compose.pluginDownloadTestJs.yml</td>
 				</tr>
+				<tr>
+					<td>Component Use</td>
+					<td>Visual</td>
+					<td>8095</td>
+					<td>Python</td>
+					<td>No</td>
+					<td>Contains a co-use component sankey diagram, and the most used components bar graph endpoints</td>
+					<td>Yes</td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Visual-Component-Use">Plugin-Visual-Component-Use</a></td>
+					<td>docker-compose.pluginVisualComponentUse.yml</td>
+				</tr>
+				<tr>
+					<td>iGem</td>
+					<td>Visual</td>
+					<td>3000</td>
+					<td>Typescript</td>
+					<td>No</td>
+					<td>Contains endpoints for iGEM Main Page, iGEM Design Page, and iGEM Experience Page</td>
+					<td>Yes</td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Visual-Igem">Plugin-Visual-Igem</a></td>
+					<td>docker-compose.pluginVisualIgem.yml</td>
+				</tr>
+				<tr>
+					<td>Excel2SBOL</td>
+					<td>Submit</td>
+					<td>8098</td>
+					<td>Python</td>
+					<td>No</td>
+					<td>Converts excel data in to SBOL data</td>
+					<td>No</td>
+					<td><a href="https://github.com/SynBioHub/Plugin-Submit-Excel2SBOL">Plugin-Submit-Excel2SBOL</a></td>
+					<td>docker-compose.pluginSubmitExcel2SBOL.yml</td>
+				</tr>
 			</tbody>
 		</table>
 	</body>
