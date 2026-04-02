@@ -10,7 +10,6 @@ services:
             - elasticsearch
             - synbiohub
             - synbiohubFrontend
-        dns: 8.8.8.8
         volumes:
             - type: volume
               source: explorer

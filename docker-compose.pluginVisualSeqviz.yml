@@ -7,6 +7,4 @@ services:
       - "8085:5000"
     environment:
       - SEQVIZ_HOST=http://localhost:8085/
-    dns:
-      - 8.8.8.8
     restart: always

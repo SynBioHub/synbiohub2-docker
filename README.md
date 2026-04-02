@@ -10,6 +10,22 @@ To run the base configuration:
 2. `git clone -b snapshot https://github.com/synbiohub/synbiohub2-docker`
 3. `docker-compose -f ./synbiohub2-docker/docker-compose.yml up`
 
+### Configuration
+#### Backend URL
+The frontend backend URL can be configured using the `SYNBIOHUB_BACKEND` environment variable. If not set, it defaults to `http://localhost:7777`.
+
+To use a custom backend URL:
+```bash
+SYNBIOHUB_BACKEND=http://your-backend-url:port docker-compose -f ./synbiohub2-docker/docker-compose.yml up
+```
+
+Alternatively, you can create a `.env` file in the same directory as `docker-compose.yml`:
+```bash
+cp .env.example .env
+# Edit .env and uncomment/set SYNBIOHUB_BACKEND
+docker-compose -f ./synbiohub2-docker/docker-compose.yml up
+```
+
 ### With Explorer
 To add [SBOLExplorer](https://github.com/michael13162/SBOLExplorer), add the `docker-compose.explorer.yml` to the main docker-compose, i.e. for step 3 run `docker-compose -f ./synbiohub2-docker/docker-compose.yml -f ./synbiohub2-docker/docker-compose.explorer.yml up`
 

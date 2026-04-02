@@ -8,4 +8,3 @@ services:
         environment:
             - SERVER_HOST=http://localhost:8086/
         restart: always
-        dns: 8.8.8.8
