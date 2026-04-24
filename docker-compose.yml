@@ -11,12 +11,12 @@ services:
     virtuoso:
         image: askomics/virtuoso:7.2.14
         environment:
-            - VIRT_SPARQL_MaxQueryCostEstimationTime=default
+            - VIRT_Parameters_NumberOfBuffers=340000
+            - VIRT_Parameters_MaxDirtyBuffers=250000
+            - VIRT_SPARQL_MaxQueryCostEstimationTime=40000
             - VIRT_SPARQL_MaxQueryExecutionTime=300
             - VIRT_Parameters_ServerThreads=100
             - VIRT_HTTPServer_ServerThreads=100
-            - VIRT_Parameters_NumberOfBuffers=340000
-            - VIRT_Parameters_MaxDirtyBuffers=250000
         volumes: 
             - type: volume
               source: virtuoso-db1
