@@ -23,9 +23,9 @@ services:
             - "9200:9200"
         volumes:
             - type: volume
-              source: esdata
+              source: esdata9
               target: /usr/share/elasticsearch/data
 
 volumes:
-    esdata:
+    esdata9:
     explorer:
